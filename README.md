@@ -4,7 +4,7 @@ RESTful API for managing hotels. Java 21, Spring Boot, Spring Data JPA, Liquibas
 
 ## Requirements
 - JDK 21
-- Maven 3.6.3+
+- Maven 3.9.16
 
 ## Run
     mvn spring-boot:run
