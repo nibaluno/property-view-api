@@ -28,6 +28,7 @@ The app must start with `mvn spring-boot:run` and will be checked by automated t
     and `sort_order` in the link table (insertion order is preserved).
 12. **Search semantics:** `name` contains (case-insensitive); brand/city/country equals (case-insensitive);
     several amenities must all match.
+13. Application services are plain classes registered in infrastructure/config/UseCaseConfig (no Spring annotations in application).
 ## Consequences
 - Slightly more code (separate domain/entity models and mappers) in exchange for testability
   and replaceable infrastructure.
