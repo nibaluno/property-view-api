@@ -1,0 +1,56 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-uq-amenity-normalized-name
+      author: property-view
+      changes:
+        - addUniqueConstraint:
+            tableName: amenity
+            columnNames: normalized_name
+            constraintName: uq_amenity_normalized_name
+
+  - changeSet:
+      id: 002-fk-hotel-amenity-hotel
+      author: property-view
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: hotel_amenity
+            baseColumnNames: hotel_id
+            constraintName: fk_hotel_amenity_hotel
+            referencedTableName: hotel
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+  - changeSet:
+      id: 002-fk-hotel-amenity-amenity
+      author: property-view
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: hotel_amenity
+            baseColumnNames: amenity_id
+            constraintName: fk_hotel_amenity_amenity
+            referencedTableName: amenity
+            referencedColumnNames: id
+
+  - changeSet:
+      id: 002-idx-hotel-brand
+      author: property-view
+      changes:
+        - createIndex: { tableName: hotel, indexName: idx_hotel_brand, columns: [ { column: { name: brand } } ] }
+
+  - changeSet:
+      id: 002-idx-hotel-city
+      author: property-view
+      changes:
+        - createIndex: { tableName: hotel, indexName: idx_hotel_city, columns: [ { column: { name: city } } ] }
+
+  - changeSet:
+      id: 002-idx-hotel-country
+      author: property-view
+      changes:
+        - createIndex: { tableName: hotel, indexName: idx_hotel_country, columns: [ { column: { name: country } } ] }
+
+  - changeSet:
+      id: 002-idx-hotel-amenity-amenity-id
+      author: property-view
+      changes:
+        - createIndex: { tableName: hotel_amenity, indexName: idx_hotel_amenity_amenity_id, columns: [ { column: { name: amenity_id } } ] }
