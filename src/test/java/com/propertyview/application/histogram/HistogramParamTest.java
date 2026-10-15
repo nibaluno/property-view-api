@@ -1,6 +1,5 @@
 package com.propertyview.application.histogram;
 
-import com.propertyview.application.HistogramParam;
 import com.propertyview.domain.exception.UnsupportedHistogramParamException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

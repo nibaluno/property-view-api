@@ -1,0 +1,31 @@
+package com.propertyview.application.service;
+
+import com.propertyview.application.histogram.HistogramParam;
+import com.propertyview.application.histogram.HistogramProvider;
+import com.propertyview.application.port.in.GetHistogramUseCase;
+import java.util.Collection;
+import java.util.EnumMap;
+import java.util.Map;
+
+public class HistogramService implements GetHistogramUseCase {
+    private final Map<HistogramParam, HistogramProvider> providers = new EnumMap<>(HistogramParam.class);
+
+    /** Fail-fast: дубликаты и пропущенные параметры обнаруживаются при старте, а не при первом запросе. */
+    public HistogramService(Collection<HistogramProvider> all) {
+        for (HistogramProvider provider : all) {
+            if (providers.put(provider.param(), provider) != null) {
+                throw new IllegalStateException("Duplicate HistogramProvider for " + provider.param());
+            }
+        }
+        for (HistogramParam param : HistogramParam.values()) {
+            if (!providers.containsKey(param)) {
+                throw new IllegalStateException("No HistogramProvider for " + param);
+            }
+        }
+    }
+
+    @Override
+    public Map<String, Long> getHistogram(HistogramParam param) {
+        return providers.get(param).histogram();
+    }
+}
