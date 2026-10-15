@@ -22,7 +22,12 @@ The app must start with `mvn spring-boot:run` and will be checked by automated t
 7. **Search** via Spring Data Specifications; **histogram** via the Strategy pattern.
 8. **DB switching** through profiles and DB-agnostic Liquibase changelogs; no native SQL.
 9. **Commits:** Conventional Commits, merged via "Rebase and merge" to keep history readable.
-
+10. **Repository port is attribute-oriented:** `HotelSearchCriteria` and `HotelOverview` live in the domain;
+    histograms are served by `countByBrand/City/Country/Amenity` (Strategy providers live in application).
+11. **Amenities** are a separate table with `normalized_name` (case-insensitive uniqueness, portable across DBs)
+    and `sort_order` in the link table (insertion order is preserved).
+12. **Search semantics:** `name` contains (case-insensitive); brand/city/country equals (case-insensitive);
+    several amenities must all match.
 ## Consequences
 - Slightly more code (separate domain/entity models and mappers) in exchange for testability
   and replaceable infrastructure.
@@ -41,3 +46,4 @@ The app must start with `mvn spring-boot:run` and will be checked by automated t
 | 8 | Required fields | all except description and checkOut |
 | 9 | Mongo | only via port/adapter, not implemented |
 | 10 | Description in the brief list | full text |
+| 11 | /search: should name be "contains" or "equals"? | contains, case-insensitive |
