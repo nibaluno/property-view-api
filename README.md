@@ -39,3 +39,6 @@ _TBD (see ADR-001)._
 
 ## Tests
     mvn verify
+
+## Known limitations
+**Concurrent Amenity Creation:** If two concurrent requests attempt to create the exact same new amenity simultaneously, a database uniqueness violation (`uq_amenity_normalized_name`) may occur due to race conditions. This is acceptable for the scope of this technical task and can be resolved in a production environment by adding transaction retries or a find-or-create upsert mechanism.
