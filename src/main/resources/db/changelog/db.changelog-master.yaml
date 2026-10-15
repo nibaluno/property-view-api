@@ -2,3 +2,6 @@ databaseChangeLog:
   - include:
       file: changes/001-create-tables.yaml
       relativeToChangelogFile: true
+  - include:
+      file: changes/002-constraints-and-indexes.yaml
+      relativeToChangelogFile: true
