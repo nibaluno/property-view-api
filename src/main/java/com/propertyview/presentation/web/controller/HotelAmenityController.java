@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/hotels/{id}/amenities")
 public class HotelAmenityController {
-    
+
     private final AddAmenitiesUseCase addAmenities;
 
     public HotelAmenityController(AddAmenitiesUseCase addAmenities) { this.addAmenities = addAmenities; }
