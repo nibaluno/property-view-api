@@ -25,3 +25,9 @@ server:
   port: 8092
   servlet:
     context-path: /property-view
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
