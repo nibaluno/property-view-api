@@ -1,4 +1,8 @@
 spring:
+  web:
+    locale: en
+    locale-resolver: fixed
+
   application:
     name: property-view-api
 
