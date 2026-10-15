@@ -51,6 +51,7 @@ class HotelApiEndToEndTest {
         "Free parking", "Free WiFi", "Non-smoking rooms", "Concierge", "On-site restaurant",
         "Fitness center", "Pet-friendly rooms", "Room service", "Business center", "Meeting rooms");
 
+
     private String url(String path) { return "http://localhost:" + port + "/property-view" + path; }
 
     private HttpResponse<String> get(String path) throws Exception {
@@ -71,6 +72,7 @@ class HotelApiEndToEndTest {
         return items.stream().map(s -> "\"" + s + "\"").collect(Collectors.joining(",", "[", "]"));
     }
 
+    // ---------- the scenario from the task ----------
     @Test
     void scenarioFromTheTask() throws Exception {
         // empty database
