@@ -17,5 +17,13 @@ public final class HotelFixtures {
 
     public static List<Amenity> amenities(String... names) {
         return Arrays.stream(names).map(Amenity::new).toList();
+
+
     }
+    public static Hotel withId(long id, Hotel h) {
+        return Hotel.restore(id, h.name(), h.description(), h.brand(), h.address(), h.contacts(),
+            h.arrivalTime(), h.amenities());
+    }
+
+
 }
