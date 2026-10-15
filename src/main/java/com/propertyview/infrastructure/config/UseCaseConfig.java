@@ -1,6 +1,8 @@
 package com.propertyview.infrastructure.config;
 
+import com.propertyview.application.port.in.AddAmenitiesUseCase;
 import com.propertyview.application.port.in.CreateHotelUseCase;
+import com.propertyview.application.service.AddAmenitiesService;
 import com.propertyview.application.service.CreateHotelService;
 import com.propertyview.application.service.HotelQueryService;
 import com.propertyview.domain.port.HotelRepository;
@@ -18,5 +20,10 @@ public class UseCaseConfig {
     @Bean
     HotelQueryService hotelQueryService(HotelRepository hotels) {
         return new HotelQueryService(hotels);
+    }
+
+    @Bean
+    AddAmenitiesUseCase addAmenitiesUseCase(HotelRepository hotels) {
+        return new AddAmenitiesService(hotels);
     }
 }
