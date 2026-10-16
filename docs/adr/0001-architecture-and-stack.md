@@ -29,22 +29,3 @@ The app must start with `mvn spring-boot:run` and will be checked by automated t
 12. **Search semantics:** `name` contains (case-insensitive); brand/city/country equals (case-insensitive);
     several amenities must all match.
 13. Application services are plain classes registered in infrastructure/config/UseCaseConfig (no Spring annotations in application).
-## Consequences
-- Slightly more code (separate domain/entity models and mappers) in exchange for testability
-  and replaceable infrastructure.
-- Layer rules are enforced by tests, not by Maven module boundaries.
-
-## Open questions / assumptions (to be confirmed with the customer)
-| # | Question | Default assumption |
-|---|---|---|
-| 1 | POST /hotels status code | 201 + Location |
-| 2 | Response of POST /hotels/{id}/amenities | 200 + hotel details |
-| 3 | Search case sensitivity | case-insensitive |
-| 4 | Search with several amenities | all must match (AND) |
-| 5 | Duplicate amenities | ignored (idempotent) |
-| 6 | Unknown histogram parameter | 400 |
-| 7 | Typos in JSON examples | treated as typos |
-| 8 | Required fields | all except description and checkOut |
-| 9 | Mongo | only via port/adapter, not implemented |
-| 10 | Description in the brief list | full text |
-| 11 | /search: should name be "contains" or "equals"? | contains, case-insensitive |
