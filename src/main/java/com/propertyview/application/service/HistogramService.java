@@ -7,10 +7,14 @@ import java.util.Collection;
 import java.util.EnumMap;
 import java.util.Map;
 
+
+/**
+ * an application service that implements the {@link GetHistogramUseCase} input port
+ * it employs the strategy pattern to aggregate hotel statistics
+ */
 public class HistogramService implements GetHistogramUseCase {
     private final Map<HistogramParam, HistogramProvider> providers = new EnumMap<>(HistogramParam.class);
 
-    /** Fail-fast: дубликаты и пропущенные параметры обнаруживаются при старте, а не при первом запросе. */
     public HistogramService(Collection<HistogramProvider> all) {
         for (HistogramProvider provider : all) {
             if (providers.put(provider.param(), provider) != null) {

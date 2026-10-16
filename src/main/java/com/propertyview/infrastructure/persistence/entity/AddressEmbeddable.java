@@ -3,6 +3,9 @@ package com.propertyview.infrastructure.persistence.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+/**
+ * JPA embeddable representation of the {@link com.propertyview.domain.model.Address} value object
+ */
 @Embeddable
 public record AddressEmbeddable(
     @Column(name = "house_number", nullable = false) int houseNumber,

@@ -4,6 +4,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 
+/**
+ * web dto for the hotel creation payload with validation constraints
+ */
 public record CreateHotelRequest(
     @Schema(example = "DoubleTree by Hilton Minsk") @NotBlank @Size(max = 255) String name,
     @Schema(example = "The DoubleTree by Hilton Hotel Minsk offers 193 luxurious rooms ...") @Size(max = 4000) String description,

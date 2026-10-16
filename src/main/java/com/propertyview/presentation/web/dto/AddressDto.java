@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 
+/**
+ * web dto representing a hotels physical address
+ */
 @JsonPropertyOrder({"houseNumber", "street", "city", "country", "postCode"})
 public record AddressDto(
 

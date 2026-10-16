@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Optional;
 
 
+/**
+ * spring data JPA repository for {@link HotelEntity} with custom histogram queries
+ */
 public  interface HotelJpaRepository extends JpaRepository<HotelEntity, Long>, JpaSpecificationExecutor<HotelEntity>{
 
     @Query("select h from HotelEntity h left join fetch h.amenities where h.id = :id")

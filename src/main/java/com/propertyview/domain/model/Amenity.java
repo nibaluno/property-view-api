@@ -4,6 +4,11 @@ import com.propertyview.domain.exception.DomainValidationException;
 
 import java.util.Locale;
 
+/**
+ * a value object representing a hotel amenity
+ * it ensures string normalization and case-insensitive comparison
+ */
+
 public record Amenity(String name) {
     public static final int MAX_LENGTH = 255;
 

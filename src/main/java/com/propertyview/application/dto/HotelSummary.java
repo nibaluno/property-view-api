@@ -3,6 +3,12 @@ package com.propertyview.application.dto;
 import com.propertyview.domain.model.Hotel;
 import com.propertyview.domain.model.HotelOverview;
 
+
+/**
+ * application-level dto representing a brief summary of a hotel,
+ * used primarily for lists and search results (GET /hotels, GET /search)
+ * formats the complex Address value object into a single readable line
+ */
 public record HotelSummary(Long id, String name, String description, String address, String phone) {
     public static HotelSummary from(HotelOverview o) {
         return new HotelSummary(o.id(), o.name(), o.description(), o.address().toSingleLine(), o.phone());

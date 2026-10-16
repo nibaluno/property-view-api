@@ -2,6 +2,9 @@ package com.propertyview.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 
+/**
+ * JPA entity representing a hotel amenity with a unique normalized name
+ */
 @Entity
 @Table(name = "amenity")
 public class AmenityEntity {

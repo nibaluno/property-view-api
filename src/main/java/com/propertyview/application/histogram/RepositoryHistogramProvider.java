@@ -3,6 +3,10 @@ package com.propertyview.application.histogram;
 import java.util.Map;
 import java.util.function.Supplier;
 
+/**
+ * a generic implementation of the {@link HistogramProvider} strategy,
+ * which delegates data retrieval to a repository via a supplier function ({@link Supplier}).
+ */
 public final class RepositoryHistogramProvider implements HistogramProvider {
     private final HistogramParam param;
     private final Supplier<Map<String, Long>> source;

@@ -17,6 +17,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
+/**
+ * spring configuration class that wires pure application services and strategies as Spring beans
+ */
 @Configuration(proxyBeanMethods = false)
 public class UseCaseConfig {
 

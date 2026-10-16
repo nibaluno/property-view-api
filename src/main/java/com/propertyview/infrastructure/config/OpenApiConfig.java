@@ -6,6 +6,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
+/**
+ * spring configuration class for customizing the OpenAPI swagger documentation metadata
+ */
 @Configuration(proxyBeanMethods = false)
 public class OpenApiConfig {
     @Bean

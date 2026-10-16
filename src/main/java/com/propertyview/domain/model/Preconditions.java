@@ -2,6 +2,11 @@ package com.propertyview.domain.model;
 
 import com.propertyview.domain.exception.DomainValidationException;
 
+
+/**
+ * a utility helper class  for verifying domain object invariants—checking for nulls,
+ *empty strings, and invalid values
+ */
 final class Preconditions {
     private Preconditions() {}
 

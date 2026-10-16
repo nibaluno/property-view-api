@@ -6,6 +6,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
 
+/**
+ * MapStruct mapper for converting value objects to their JPA embeddable counterparts
+ */
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.ERROR)
 public interface ValueObjectMapper {
     Address toDomain(AddressEmbeddable source);

@@ -6,6 +6,10 @@ import com.propertyview.domain.model.HotelSearchCriteria;
 import com.propertyview.domain.port.HotelRepository;
 import java.util.List;
 
+/**
+ * an application service that implements the {@link SearchHotelsUseCase} input port
+ * it coordinates the process of searching for and filtering hotels based on the provided criteria
+ */
 public class SearchHotelsService implements SearchHotelsUseCase {
     private final HotelRepository hotels;
 

@@ -4,6 +4,10 @@ import com.propertyview.domain.model.*;
 import com.propertyview.infrastructure.persistence.entity.*;
 import org.springframework.stereotype.Component;
 
+
+/**
+ * manual mapper converting {@link Hotel} domain objects to JPA entities and vice versa
+ */
 @Component
 public class HotelPersistenceMapper {
     private final ValueObjectMapper valueObjects;

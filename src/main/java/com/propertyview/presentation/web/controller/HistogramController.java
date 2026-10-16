@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
+/**
+ * REST controller for retrieving hotel counts grouped by specific attributes
+ */
 @Tag(name = "Histogram", description = "Hotel counts grouped by an attribute")
 @RestController
 @RequestMapping("/histogram")

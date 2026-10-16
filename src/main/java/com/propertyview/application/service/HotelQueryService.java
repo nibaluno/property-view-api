@@ -8,6 +8,12 @@ import com.propertyview.domain.exception.HotelNotFoundException;
 import com.propertyview.domain.port.HotelRepository;
 import java.util.List;
 
+/**
+ * an application service that implements two input ports simultaneously {@link GetHotelsUseCase} and {@link GetHotelUseCase}
+ * it is responsible for data retrieval operations:
+ * fetching a concise list of all hotels or
+ * obtaining detailed information for a specific hotel by its ID.
+ */
 public class HotelQueryService implements GetHotelsUseCase, GetHotelUseCase {
     private final HotelRepository hotels;
 

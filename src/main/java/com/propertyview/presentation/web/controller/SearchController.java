@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
+/**
+ * REST controller for dynamically searching hotels by various optional criteria
+ */
 @Tag(name = "Search", description = "Find hotels by attributes")
 @RestController
 @RequestMapping("/search")

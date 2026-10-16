@@ -4,6 +4,10 @@ import com.propertyview.domain.exception.UnsupportedHistogramParamException;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * an enum representing the allowed parameters for constructing hotel histograms
+ * (brand, city, country, amenities)
+ */
 public enum HistogramParam {
     BRAND("brand"), CITY("city"), COUNTRY("country"), AMENITIES("amenities");
 

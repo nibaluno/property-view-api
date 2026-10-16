@@ -17,6 +17,9 @@ import jakarta.validation.constraints.Size;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+/**
+ * REST controller for appending amenities to an existing hotel
+ */
 @Tag(name = "Hotels")
 @RestController
 @RequestMapping("/hotels/{id}/amenities")

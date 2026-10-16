@@ -19,6 +19,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+/**
+ * REST controller for creating hotels and retrieving their lists or details
+ */
 @Tag(name = "Hotels", description = "Create hotels and read their details")
 @RestController
 @RequestMapping("/hotels")

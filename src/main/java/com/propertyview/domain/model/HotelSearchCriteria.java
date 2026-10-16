@@ -6,8 +6,10 @@ import java.util.stream.Collectors;
 
 import static com.propertyview.domain.model.Preconditions.optionalText;
 
+/**
+ * a value object that encapsulates filtering criteria for hotel searches
+ */
 public record HotelSearchCriteria(String name, String brand, String city, String country, Set<Amenity> amenities)  {
-
 
     public HotelSearchCriteria {
         name = optionalText(name);

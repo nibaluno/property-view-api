@@ -4,6 +4,9 @@ import com.propertyview.application.dto.*;
 import com.propertyview.domain.model.*;
 import com.propertyview.presentation.web.dto.*;
 
+/**
+ * manual mapper converting between web request/response dtos and application commands/models
+ */
 public final class HotelWebMapper {
     private HotelWebMapper() {}
 

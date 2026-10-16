@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * builds JPA criteria queries for dynamic hotel search based on {@link HotelSearchCriteria}.
+ */
 final class HotelSpecifications {
     private HotelSpecifications() {}
 

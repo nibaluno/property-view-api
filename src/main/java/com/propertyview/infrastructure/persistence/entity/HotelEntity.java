@@ -5,6 +5,10 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * JPA entity representing a hotel, including its embedded properties and amenities
+ */
 @Entity
 @Table(name = "hotel")
 public class HotelEntity {

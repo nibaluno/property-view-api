@@ -9,6 +9,10 @@ import com.propertyview.domain.model.Hotel;
 import com.propertyview.domain.port.HotelRepository;
 import java.util.List;
 
+/**
+ * an application service that implements the {@link AddAmenitiesUseCase} input port
+ * it coordinates the scenario of adding new amenities to an existing hotel aggregate.
+ */
 public class AddAmenitiesService implements AddAmenitiesUseCase {
     private final HotelRepository hotels;
 

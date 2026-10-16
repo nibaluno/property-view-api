@@ -2,6 +2,9 @@ package com.propertyview.domain.port;
 import com.propertyview.domain.model.*;
 import java.util.*;
 
+/**
+ * an outbound port that defines a contract for saving and retrieving hotels
+ * */
 public interface HotelRepository {
     Hotel save(Hotel hotel);
     Optional<Hotel> findById(long id);

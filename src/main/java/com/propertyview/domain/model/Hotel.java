@@ -1,11 +1,13 @@
-// Hotel.java: агрегат
 package com.propertyview.domain.model;
 
 import java.util.*;
 import static com.propertyview.domain.model.Preconditions.*;
 
+/**
+ * an aggregate root representing the hotel entity within the domain model
+ * it manages the hotel's state, enforces business invariants, and encapsulates a collection of amenities
+ */
 public final class Hotel {
-
     private final Long id;
     private final String name;
     private final String description;
@@ -53,8 +55,6 @@ public final class Hotel {
     public HotelOverview toOverview() {
         return new HotelOverview(id, name, description, address, contacts.phone());
     }
-
-
 
     public Long id() { return id; }
     public String name() { return name; }

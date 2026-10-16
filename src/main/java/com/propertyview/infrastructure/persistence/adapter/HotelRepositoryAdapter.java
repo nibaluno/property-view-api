@@ -13,6 +13,10 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * JPA implementation of the {@link HotelRepository} port
+ * handles entity mapping, dynamic search, and amenity deduplication
+ */
 @Repository
 @Transactional(readOnly = true)
 public class HotelRepositoryAdapter implements HotelRepository {
