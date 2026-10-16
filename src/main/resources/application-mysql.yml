@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/propertyview?useUnicode=true&characterEncoding=utf8}
+    username: ${DB_USERNAME:propertyview}
+    password: ${DB_PASSWORD:propertyview}
