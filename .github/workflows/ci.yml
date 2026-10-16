@@ -29,3 +29,38 @@ jobs:
 
       - name: Build and test
         run: mvn -B -ntp verify
+
+  smoke:
+    name: Smoke test (mvn spring-boot:run)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Start the application exactly as the customer does
+        run: nohup mvn -B -ntp spring-boot:run > app.log 2>&1 &
+
+      - name: Wait until the API answers on port 8092
+        run: |
+          for i in $(seq 1 90); do
+            if curl -fs http://localhost:8092/property-view/hotels > /dev/null; then
+              echo "up after ${i} tries"; exit 0
+            fi
+            sleep 2
+          done
+          echo "Application did not start in time"; cat app.log; exit 1
+
+      - name: Smoke scenario
+        run: |
+          command -v jq >/dev/null || sudo apt-get install -y jq
+          bash scripts/smoke.sh
+
+      - name: Application log (on failure)
+        if: failure()
+        run: cat app.log
